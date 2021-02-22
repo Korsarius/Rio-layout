@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Rio</title>
+  </head>
+  <body>
+    <!-- MODALS -->
+    <!-- MOBILE MENU -->
+    <div class="modals-wrapper">
+      <div class="modal modal-mobile-menu">
+          <div class="modal-container mobile-menu-container">
+            <nav class="mobile-menu-items">
+              <a href="#" class="mobile-menu-item">Home</a>
+              <a href="#" class="mobile-menu-item">Our Apartment</a>
+              <a href="#" class="mobile-menu-item">Rio</a>
+              <a href="#" class="mobile-menu-item">Contact</a>
+              <a href="#"><button class="book-btn">Book</button></a>
+            </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Front-Page Section -->
+    <section class="front-page">
+      <header class="front-page-header">
+        <div>
+          <img src="./images/wavy-line.png" alt="wavy-line" /><span
+            class="guest"
+            >be my guest</span
+          ><img src="./images/wavy-line.png" alt="wavy-line" />
+        </div>
+        <h1 class="welcome">Welcome to Rio</h1>
+      </header>
+      <nav class="nav mobile-tablet">
+        <a href="#" class="welcome-mobile">Welcome to Rio</a>
+        <div class="menu">
+          <span class="menu-global menu-top"></span>
+          <span class="menu-global menu-middle"></span>
+          <span class="menu-global menu-bottom"></span>
+        </div>
+      </nav>
+      <nav class="navigation desktop">
+        <ul class="menu-desktop">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our Apartment</a></li>
+          <li><a href="#">Rio</a></li>
+          <li><a href="#">Contact</a></li>
+          <li class="book-li">
+            <a href="#"><button class="book-btn">Book</button></a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <div class="wrapper">
+      <!-- Find Apartments Section -->
+      <section class="find-apt">
+        <form class="search-apt-form" action="">
+          <div class="search-apt-form-input">
+            <label for="check-in">Check In</label>
+            <input id="check-in" type="date" />
+          </div>
+          <div class="search-apt-form-input">
+            <label for="check-out">Check Out</label>
+            <input id="check-out" type="date" />
+          </div>
+          <div class="search-apt-form-input">
+            <label for="adults">Adults</label>
+            <input id="adults" type="number" placeholder="1" />
+          </div>
+          <div class="search-apt-form-input">
+            <label for="kids">Kids</label>
+            <input id="kids" type="number" placeholder="0" />
+          </div>
+          <div class="search-apt-form-input">
+            <input
+              class="search-btn"
+              id="search-btn"
+              type="submit"
+              value="Search"
+            />
+          </div>
+        </form>
+        <div class="represent">
+          <h2>A Home in the Heart of the City</h2>
+          <span class="orange-line"></span>
+          <p>
+            Stay in a beautiful highrise in Ipanema fust off the beach close to
+            many word-class cafes and restaurants. Enjoy Bossa Nova with a cold
+            beer!
+          </p>
+        </div>
+      </section>
+      <!-- Our Apartments Section -->
+      <section class="our-apt">
+        <div class="our-apt-item">
+          <div class="our-apt-head">
+            <h2>Our Apartment</h2>
+            <span class="orange-line"></span>
+          </div>
+          <div>
+            <img class="apt-img" src="/images/apartment1.jpg" alt="apt-1" />
+          </div>
+        </div>
+        <div class="our-apt-item">
+          <div>
+            <img class="apt-img" src="/images/apartment2.jpg" alt="apt-2" />
+          </div>
+          <div class="our-apt-booking">
+            <div class="our-apt-booking-item" id="our-apt-booking-item">
+              <p class="our-apt-info">
+                The apartment is spacious with high ceilings, large windows, an
+                open balcony and a beautiful view of the beach. Stay cool with
+                central A/C and wind-down comfortably in the queen sized
+                bedroom.
+              </p>
+              <a class="book-now-link" href="#">book now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="location">
+        <div class="location-item">
+          <div class="location-img-wrapper">
+            <img
+              class="location-img"
+              src="/images/location.jpg"
+              alt="location-img"
+            />
+          </div>
+          <div class="location-head">
+            <h2>Location</h2>
+            <span class="orange-line"></span>
+          </div>
+        </div>
+        <div class="location-item">
+          <div class="location-info">
+            <p class="location-info-text">
+              Conveniently located just opposite Leblon Beach in Ipanema, our
+              apartment will sweep you into the charm and excitements of Rio!
+              Dine at one of our neighborhood's many world-renowned restaurants,
+              enjoy fresh-squeezed juices from one of the colorful stalls along
+              the beach. and don't miss live bossy-nova show in one of the local
+              bars.
+            </p>
+            <a class="view-map" href="#">view map</a>
+          </div>
+        </div>
+      </section>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="contact-us">
+          <h3 class="footer-header">Contact Us</h3>
+          <span class="orange-line"></span>
+          <p>Ask us anything! We're here to answer any questions you have.</p>
+          <span class="email-span">Email:</span>
+          <a class="email-link" href="mailto:info@mysite.com"
+            >info@mysite.com</a
+          >
+          <span class="copyright">&copy; Be my guest in Rio</span>
+        </div>
+        <div class="follow-us">
+          <h3 class="footer-header">Follow Us</h3>
+          <span class="orange-line"></span>
+          <div class="social-icons">
+            <a href="#"
+              ><img
+                class="icon"
+                src="./images/tripadvisor.png"
+                alt="tripadvisor-img"
+            /></a>
+            <a href="#"
+              ><img class="icon" src="./images/facebook.png" alt="facebook-img"
+            /></a>
+            <a href="#"
+              ><img
+                class="icon"
+                src="./images/instagram.png"
+                alt="instagram-img"
+            /></a>
+          </div>
+        </div>
+        <div class="subscribe">
+          <h3 class="footer-header">Subscribe for Updates & Offers</h3>
+          <span class="orange-line"></span>
+          <div class="subscribe-form">
+            <input
+              class="subscribe-input"
+              type="text"
+              placeholder="Enter your email here*"
+            />
+            <input
+              class="btn subscribe-input"
+              type="submit"
+              value="Subscribe Now"
+            />
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

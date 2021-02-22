@@ -1,0 +1,999 @@
+:root {
+  /* background */
+  --c-light: #fff;
+  --c-grey-dark: #868686;
+  --c-grey-light: #e5eaed;
+  --c-cadetblue: #6ba3a2;
+
+  /* text */
+  --txt-c-light: var(--c-light);
+  --txt-c-grey-dark: var(--c-grey-dark);
+  --txt-c-cadetblue: var(--c-cadetblue);
+  --txt-c-cadetblue-light: #85b7ae;
+
+  /* font */
+  --font-main: "Raleway-Regular", sans-serif;
+  --font-georgia: "Georgia-Regular";
+
+  /* container width */
+  --vertical-scroll: 20px;
+  --mobile: calc(300px + var(--vertical-scroll));
+  --tablet: calc(640px + var(--vertical-scroll));
+  --desktop: calc(960px + var(--vertical-scroll));
+}
+
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Georgia-Regular";
+  src: url("../fonts/Georgia.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* COMMON */
+
+body {
+  position: relative;
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: var(--txt-c-grey-dark);
+  background-color: var(--c-grey-light);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-georgia);
+  color: var(--txt-c-light);
+  font-size: 62px;
+  font-weight: normal;
+  letter-spacing: 3.3px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+}
+
+h3 {
+  font-weight: normal;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type="submit"],
+button {
+  border: none;
+  background-color: var(--c-grey-dark);
+  color: var(--txt-c-light);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  outline: 1px solid var(--c-grey-dark);
+  background-color: var(--c-light);
+  color: var(--txt-c-grey-dark);
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* MOBILE MENU */
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: var(--c-grey-dark);
+  width: 100%;
+  z-index: 100;
+}
+
+.welcome-mobile {
+  margin-left: 15px;
+  color: var(--txt-c-light);
+}
+
+.menu {
+  position: relative;
+  left: 38%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--c-accent);
+  cursor: pointer;
+  margin: 0 auto;
+  z-index: 9;
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  border-top: 3px solid white;
+  width: 20px;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 10px;
+  left: 8px;
+}
+.menu-middle {
+  top: 15px;
+  left: 8px;
+}
+.menu-bottom {
+  top: 20px;
+  left: 8px;
+}
+
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}
+
+/* MOBILE MENU MODAL */
+
+.modals-wrapper {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 102%;
+  z-index: 100;
+}
+
+.modal-mobile-menu {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-color: var(--c-light);
+}
+
+.modal-mobile-menu--active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 9;
+}
+
+.mobile-menu-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-items {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu-item {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: var(--txt-c-grey);
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 35px;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.mobile-menu-item:hover {
+  font-size: 20px;
+  color: var(--txt-c-accent);
+}
+
+.mobile-menu-items a:last-child {
+  margin-bottom: 0;
+}
+
+/* FRONT PAGE */
+
+.front-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  background-image: url("/images/rio.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.front-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.front-page-header div {
+  margin-bottom: 17px;
+}
+
+.guest {
+  margin: 0 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--txt-c-light);
+  text-transform: uppercase;
+}
+
+.welcome {
+  margin: 0 0 318px;
+}
+
+.navigation {
+  margin: 30px auto 122px;
+}
+
+.menu-desktop {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu-desktop li {
+  padding-right: 85px;
+}
+
+.menu-desktop li:last-child {
+  padding-right: 0;
+}
+
+.menu-desktop li a {
+  color: var(--txt-c-light);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-desktop li a:hover {
+  text-decoration: underline;
+}
+
+.book-li {
+  padding-left: 35px;
+  border-left: 1px solid var(--c-light);
+}
+
+.book-btn {
+  width: 110px;
+  padding: 7px 0;
+}
+
+/* FIND APARTMENTS SECTION */
+
+.find-apt {
+  margin-top: -70px;
+  padding-bottom: 60px;
+  background-color: var(--c-light);
+}
+
+.search-apt-form {
+  display: flex;
+  padding-top: 25px;
+  margin: 0 15px 65px;
+}
+
+.search-apt-form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-apt-form div:not(:last-child) {
+  margin-right: 10px;
+}
+
+.search-apt-form div:nth-child(1),
+.search-apt-form div:nth-child(2) {
+  width: 31%;
+}
+
+.search-apt-form div:nth-child(3),
+.search-apt-form div:nth-child(4) {
+  width: 9%;
+}
+
+.search-apt-form div:last-child {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-apt-form-input label {
+  margin-bottom: 5px;
+  color: black;
+}
+
+.search-apt-form-input input {
+  height: 31px;
+  padding: 5px 5px 5px 10px;
+  border: 1px solid #dcdcdc;
+}
+
+.search-apt-form-input input[type="submit"] {
+  background-color: var(--c-cadetblue);
+  color: var(--txt-c-light);
+}
+
+.search-apt-form-input input[type="submit"]:hover {
+  background-color: var(--c-light);
+  color: var(--txt-c-cadetblue);
+  outline: 1px solid var(--c-cadetblue);
+}
+
+.search-btn {
+  color: var(--txt-c-light);
+  background-color: var(--c-cadetblue);
+}
+
+.represent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 130px;
+}
+
+.represent h2 {
+  margin-bottom: 70px;
+}
+
+.represent .orange-line {
+  top: 50%;
+}
+
+.represent p {
+  text-align: center;
+}
+
+.our-apt {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+  background-color: var(--c-light);
+}
+
+.our-apt div:last-child {
+  margin-bottom: -4px;
+}
+
+.our-apt-item {
+  width: 100%;
+  display: flex;
+}
+
+.apt-img {
+  height: 270px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.our-apt-item div:first-child {
+  width: 34%;
+}
+
+.our-apt-item div:not(:first-child) {
+  width: 66%;
+}
+
+.our-apt-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -0.5px;
+  color: var(--txt-c-light);
+  background-color: var(--c-cadetblue);
+}
+
+.our-apt-head,
+.location-head {
+  position: relative;
+}
+
+.our-apt-head h2,
+.location-head h2 {
+  margin-bottom: 0;
+}
+
+.our-apt-head .orange-line {
+  top: 70%;
+}
+
+.location-head .orange-line {
+  top: 63%;
+}
+
+.our-apt-booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#our-apt-booking-item {
+  width: 500px;
+}
+
+.our-apt-booking-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.our-apt-info {
+  margin-bottom: 70px;
+}
+
+.book-now-link {
+  color: var(--txt-c-cadetblue-light);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* LOCATION SECTION */
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.location-item {
+  margin-top: -4px;
+  background-color: var(--c-light);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-img-wrapper {
+  width: 66%;
+}
+
+.location-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.location-head {
+  height: 280px;
+  margin-bottom: 4px;
+  width: 34%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--txt-c-light);
+  background-color: var(--c-cadetblue);
+}
+
+.location-info {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 65px;
+  margin-bottom: 75px;
+}
+
+.location-info-text {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.view-map {
+  color: var(--txt-c-cadetblue-light);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 0 15px;
+}
+
+.footer-header {
+  margin-bottom: 35px;
+}
+
+.orange-line {
+  position: absolute;
+  border-top: 2px solid orange;
+  width: 35px;
+}
+
+.contact-us {
+  width: 25%;
+}
+
+.email-link {
+  color: var(--c-grey-dark);
+  cursor: pointer;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  display: inline-block;
+  margin-top: 75px;
+}
+
+.follow-us {
+  width: 25%;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.icon {
+  width: 28px;
+  height: 30px;
+  margin-right: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.3);
+}
+
+.subscribe {
+  width: 35%;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us p {
+  margin-bottom: 25px;
+}
+
+.contact-us p,
+.subscribe-form {
+  padding-top: 45px;
+}
+
+.follow-us a {
+  margin-top: 45px;
+}
+
+.subscribe-form input + input {
+  margin-top: 5px;
+}
+
+.subscribe-input[type="text"] {
+  padding: 7px 0 7px 20px;
+  border: 1px solid var(--c-grey-dark);
+}
+
+.subscribe-input[type="submit"] {
+  padding: 8px 0;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile-tablet {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    max-width: 750px;
+  }
+
+  #our-apt-booking-item {
+    padding: 0 20px;
+  }
+
+  .location-head {
+    margin-bottom: 4px;
+  }
+
+  .follow-us {
+    width: 40%;
+  }
+
+  .contact-us,
+  .subscribe {
+    width: 50%;
+  }
+}
+
+/* TABLET VERSION */
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  .wrapper {
+    max-width: 600px;
+  }
+
+  .our-apt-item {
+    flex-direction: column;
+  }
+
+  .our-apt-head {
+    width: 100%;
+    height: 150px;
+  }
+
+  .our-apt-item div:not(:first-child) {
+    width: 100%;
+  }
+
+  .our-apt-item div:first-child {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .our-apt div:last-child {
+    margin-bottom: 0;
+  }
+
+  #our-apt-booking-item {
+    padding: 0;
+  }
+
+  .our-apt-booking {
+    padding: 20px;
+  }
+
+  .our-apt-info {
+    text-align: center;
+  }
+
+  .book-now-link {
+    align-self: center;
+    margin-bottom: 55px;
+  }
+
+  .location {
+    flex-direction: column;
+  }
+
+  .location-item {
+    flex-direction: column-reverse;
+  }
+
+  .location-img-wrapper {
+    width: 100%;
+  }
+
+  .location-head {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 0;
+  }
+
+  .location-head .orange-line {
+    top: 70%;
+  }
+
+  .contact-us {
+    width: 30%;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .contact-us {
+    order: 3;
+    margin-top: 35px;
+  }
+
+  .follow-us,
+  .subscribe,
+  .contact-us {
+    width: 50%;
+  }
+
+  .follow-us {
+    order: 2;
+    padding-left: 20%;
+  }
+
+  .subscribe {
+    order: 1;
+  }
+
+  .copyright {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile-tablet {
+    display: flex;
+  }
+
+  .front-page-header div {
+    margin-top: 100px;
+  }
+
+  .welcome {
+    margin: 0 0 200px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .menu {
+    left: 36%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    max-width: 550px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    max-width: 550px;
+  }
+
+  .location-info-text {
+    padding: 0 30px;
+  }
+
+  .represent {
+    padding: 0 65px;
+  }
+
+  .location-info {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .wrapper {
+    max-width: 500px;
+  }
+
+  .menu {
+    left: 33%;
+  }
+
+  .represent .orange-line {
+    top: 45%;
+  }
+
+  .represent {
+    padding: 0 30px;
+  }
+
+  .search-apt-form {
+    flex-wrap: wrap;
+  }
+
+  .search-apt-form div:nth-child(1),
+  .search-apt-form div:nth-child(2) {
+    width: 48%;
+  }
+
+  .search-apt-form div:nth-child(2) {
+    margin: 0 0 10px;
+  }
+
+  .search-apt-form div:nth-child(3),
+  .search-apt-form div:nth-child(4) {
+    width: 23%;
+  }
+
+  .search-apt-form div:last-child {
+    width: 48%;
+  }
+
+  .location-info-text {
+    width: 400px;
+    padding: 0;
+  }
+
+  .follow-us {
+    padding-left: 15%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .menu {
+    left: 31%;
+  }
+  .footer {
+    padding: 0 15px;
+  }
+  .footer h3 {
+    font-size: 14px;
+  }
+}
+
+/* MOBILE VERSION */
+
+@media only screen and (max-width: 450px) {
+  .menu {
+    left: 29%;
+  }
+  h1 {
+    font-size: 40px;
+    margin-bottom: 150px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .welcome {
+    margin: 0 0 125px;
+  }
+  .guest {
+    font-size: 14px;
+  }
+  .find-apt {
+    margin-top: 0;
+    padding-bottom: 30px;
+  }
+  .our-apt-info {
+    margin-bottom: 35px;
+  }
+  .book-now-link {
+    margin-bottom: 20px;
+  }
+  .our-apt-head,
+  .location-head {
+    height: 100px;
+  }
+  .location {
+    margin-bottom: 45px;
+  }
+  .location-info {
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
+  .location-info-text {
+    width: 300px;
+  }
+  .footer {
+    padding: 0 15px;
+  }
+  .footer h3 {
+    text-align: center;
+  }
+  .follow-us {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 25px;
+  }
+  .follow-us a {
+    margin-top: 25px;
+  }
+  .contact-us p,
+  .subscribe-form {
+    padding-top: 35px;
+  }
+  .subscribe .orange-line,
+  .follow-us .orange-line {
+    right: 45%;
+  }
+  .social-icons {
+    justify-content: center;
+    padding-left: 25px;
+  }
+  .subscribe {
+    width: 100%;
+  }
+  .subscribe-input[type="text"] {
+    padding-left: 5px;
+  }
+  .contact-us {
+    width: 100%;
+  }
+  .contact-us h3,
+  .contact-us p {
+    text-align: center;
+  }
+  .contact-us .orange-line {
+    right: 45%;
+  }
+  .copyright {
+    display: block;
+    text-align: center;
+  }
+  .email-span {
+    margin-left: 22%;
+  }
+  .email-link {
+    margin-right: 22%;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  h2 {
+    font-size: 22px;
+  }
+  .menu {
+    left: 25%;
+  }
+  .welcome {
+    margin: 0px 0 115px;
+    font-size: 34px;
+  }
+  .search-apt-form div:nth-child(3),
+  .search-apt-form div:nth-child(4) {
+    width: 22.5%;
+  }
+  .represent .orange-line {
+    top: 42%;
+  }
+  .location-head .orange-line {
+    top: 77%;
+  }
+}
