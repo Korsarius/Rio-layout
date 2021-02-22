@@ -148,11 +148,11 @@ button:hover {
   transition: 0.55s;
 }
 .menu-top {
-  top: 10px;
+  top: 7px;
   left: 8px;
 }
 .menu-middle {
-  top: 15px;
+  top: 13.5px;
   left: 8px;
 }
 .menu-bottom {
@@ -442,6 +442,10 @@ button:hover {
   position: relative;
 }
 
+.our-apt-head h2 {
+  width: 50%;
+}
+
 .our-apt-head h2,
 .location-head h2 {
   margin-bottom: 0;
@@ -571,7 +575,6 @@ button:hover {
 }
 
 .copyright {
-  display: inline-block;
   margin-top: 75px;
 }
 
@@ -627,6 +630,10 @@ button:hover {
 
 .subscribe-input[type="submit"] {
   padding: 8px 0;
+}
+
+.copyright {
+  display: inline-block;
 }
 
 .desktop {
@@ -941,7 +948,7 @@ button:hover {
   }
   .subscribe .orange-line,
   .follow-us .orange-line {
-    right: 45%;
+    right: 45.5%;
   }
   .social-icons {
     justify-content: center;
@@ -955,23 +962,16 @@ button:hover {
   }
   .contact-us {
     width: 100%;
-  }
-  .contact-us h3,
-  .contact-us p {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
   }
   .contact-us .orange-line {
-    right: 45%;
+    top: 23%;
   }
-  .copyright {
-    display: block;
+  .contact-us p {
     text-align: center;
-  }
-  .email-span {
-    margin-left: 22%;
-  }
-  .email-link {
-    margin-right: 22%;
   }
 }
 
