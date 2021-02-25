@@ -1,15 +1,18 @@
 :root {
   /* background */
+  --c-black: #000;
   --c-light: #fff;
   --c-grey-dark: #868686;
   --c-grey-light: #e5eaed;
   --c-cadetblue: #6ba3a2;
+  --c-orange: #f8bb2d;
 
   /* text */
   --txt-c-light: var(--c-light);
   --txt-c-grey-dark: var(--c-grey-dark);
   --txt-c-cadetblue: var(--c-cadetblue);
   --txt-c-cadetblue-light: #85b7ae;
+  --txt-c-red: #ff0000;
 
   /* font */
   --font-main: "Raleway-Regular", sans-serif;
@@ -42,8 +45,6 @@
   box-sizing: border-box;
 }
 
-/* COMMON */
-
 body {
   position: relative;
   font-family: var(--font-main);
@@ -57,25 +58,23 @@ h2,
 h3,
 p {
   margin: 0;
+  font-weight: normal;
 }
 
 h1 {
   font-family: var(--font-georgia);
   color: var(--txt-c-light);
   font-size: 62px;
-  font-weight: normal;
   letter-spacing: 3.3px;
 }
 
 h2 {
   font-size: 28px;
-  font-weight: normal;
   text-align: center;
 }
 
 h3 {
-  font-weight: normal;
-  color: black;
+  color: var(--c-black);
 }
 
 a {
@@ -91,7 +90,6 @@ img {
   height: auto;
 }
 
-input[type="submit"],
 button {
   border: none;
   background-color: var(--c-grey-dark);
@@ -101,7 +99,6 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover,
 button:hover {
   outline: 1px solid var(--c-grey-dark);
   background-color: var(--c-light);
@@ -111,6 +108,22 @@ button:hover {
 .wrapper {
   max-width: 980px;
   margin: 0 auto;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-row-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* MOBILE MENU */
@@ -148,11 +161,11 @@ button:hover {
   transition: 0.55s;
 }
 .menu-top {
-  top: 7px;
+  top: 8px;
   left: 8px;
 }
 .menu-middle {
-  top: 13.5px;
+  top: 14px;
   left: 8px;
 }
 .menu-bottom {
@@ -204,16 +217,6 @@ button:hover {
   position: fixed;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-menu-items {
-  display: flex;
-  flex-direction: column;
-  flex-direction: column;
-  align-items: center;
 }
 
 .mobile-menu-item {
@@ -225,19 +228,16 @@ button:hover {
   text-decoration: none;
   text-align: center;
   margin-bottom: 35px;
-  transition: font-size 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .mobile-menu-item:hover {
-  font-size: 20px;
-  color: var(--txt-c-accent);
+  color: var(--txt-c-red);
 }
 
 .mobile-menu-items a:last-child {
   margin-bottom: 0;
 }
-
-/* FRONT PAGE */
 
 .front-page {
   width: 100%;
@@ -247,12 +247,6 @@ button:hover {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.front-page-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .front-page-header div {
@@ -311,8 +305,6 @@ button:hover {
   padding: 7px 0;
 }
 
-/* FIND APARTMENTS SECTION */
-
 .find-apt {
   margin-top: -70px;
   padding-bottom: 60px;
@@ -320,7 +312,6 @@ button:hover {
 }
 
 .search-apt-form {
-  display: flex;
   padding-top: 25px;
   margin: 0 15px 65px;
 }
@@ -334,17 +325,15 @@ button:hover {
   margin-right: 10px;
 }
 
-.search-apt-form div:nth-child(1),
-.search-apt-form div:nth-child(2) {
+.form-input-date {
   width: 31%;
 }
 
-.search-apt-form div:nth-child(3),
-.search-apt-form div:nth-child(4) {
+.form-input-number {
   width: 9%;
 }
 
-.search-apt-form div:last-child {
+.form-button {
   width: 20%;
   display: flex;
   justify-content: flex-end;
@@ -352,7 +341,7 @@ button:hover {
 
 .search-apt-form-input label {
   margin-bottom: 5px;
-  color: black;
+  color: var(--c-black);
 }
 
 .search-apt-form-input input {
@@ -373,24 +362,21 @@ button:hover {
 }
 
 .search-btn {
+  padding: 7.1px 10px;
   color: var(--txt-c-light);
   background-color: var(--c-cadetblue);
 }
 
 .represent {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0 130px;
 }
 
 .represent h2 {
-  margin-bottom: 70px;
+  margin-bottom: 35px;
 }
 
 .represent .orange-line {
-  top: 50%;
+  margin-bottom: 35px;
 }
 
 .represent p {
@@ -399,7 +385,6 @@ button:hover {
 
 .our-apt {
   width: 100%;
-  display: flex;
   flex-wrap: wrap;
   margin-bottom: 35px;
   background-color: var(--c-light);
@@ -430,16 +415,12 @@ button:hover {
 
 .our-apt-head {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: -0.5px;
   color: var(--txt-c-light);
   background-color: var(--c-cadetblue);
-}
-
-.our-apt-head,
-.location-head {
-  position: relative;
 }
 
 .our-apt-head h2 {
@@ -448,21 +429,7 @@ button:hover {
 
 .our-apt-head h2,
 .location-head h2 {
-  margin-bottom: 0;
-}
-
-.our-apt-head .orange-line {
-  top: 75%;
-}
-
-.location-head .orange-line {
-  top: 63%;
-}
-
-.our-apt-booking {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 30px;
 }
 
 #our-apt-booking-item {
@@ -484,10 +451,7 @@ button:hover {
   text-transform: uppercase;
 }
 
-/* LOCATION SECTION */
-
 .location {
-  display: flex;
   flex-wrap: wrap;
   margin-bottom: 85px;
 }
@@ -497,8 +461,6 @@ button:hover {
   background-color: var(--c-light);
   display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 
 .location-img-wrapper {
@@ -515,18 +477,13 @@ button:hover {
   height: 280px;
   margin-bottom: 4px;
   width: 34%;
-  display: flex;
   justify-content: center;
-  align-items: center;
   color: var(--txt-c-light);
   background-color: var(--c-cadetblue);
 }
 
 .location-info {
   width: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 65px;
   margin-bottom: 75px;
 }
@@ -542,9 +499,7 @@ button:hover {
   text-transform: uppercase;
 }
 
-/* FOOTER */
-
-.footer {
+footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
@@ -556,9 +511,11 @@ button:hover {
 }
 
 .orange-line {
-  position: absolute;
-  border-top: 2px solid orange;
+  height: 2px;
   width: 35px;
+  margin: 0;
+  background-color: var(--c-orange);
+  border: none;
 }
 
 .contact-us {
@@ -580,10 +537,6 @@ button:hover {
 
 .follow-us {
   width: 25%;
-}
-
-.social-icons {
-  display: flex;
 }
 
 .icon {
@@ -628,7 +581,8 @@ button:hover {
   border: 1px solid var(--c-grey-dark);
 }
 
-.subscribe-input[type="submit"] {
+.subscribe-btn {
+  margin-top: 7px;
   padding: 8px 0;
 }
 
@@ -737,17 +691,13 @@ button:hover {
     margin-bottom: 0;
   }
 
-  .location-head .orange-line {
-    top: 70%;
-  }
-
   .contact-us {
     width: 30%;
   }
 
-  .footer {
+  footer {
     flex-wrap: wrap;
-    padding: 0;
+    padding: 0 15px;
   }
 
   .contact-us {
@@ -832,10 +782,6 @@ button:hover {
     left: 33%;
   }
 
-  .represent .orange-line {
-    top: 45%;
-  }
-
   .represent {
     padding: 0 30px;
   }
@@ -844,21 +790,23 @@ button:hover {
     flex-wrap: wrap;
   }
 
-  .search-apt-form div:nth-child(1),
-  .search-apt-form div:nth-child(2) {
+  .form-input-date {
     width: 48%;
   }
 
-  .search-apt-form div:nth-child(2) {
+  .form-input-date + .form-input-date {
     margin: 0 0 10px;
   }
 
-  .search-apt-form div:nth-child(3),
-  .search-apt-form div:nth-child(4) {
+  .search-apt-form div:nth-child(2) {
+    margin: 0;
+  }
+
+  .form-input-number {
     width: 23%;
   }
 
-  .search-apt-form div:last-child {
+  .form-button {
     width: 48%;
   }
 
@@ -876,10 +824,10 @@ button:hover {
   .menu {
     left: 31%;
   }
-  .footer {
+  footer {
     padding: 0 15px;
   }
-  .footer h3 {
+  footer h3 {
     font-size: 14px;
   }
 }
@@ -917,6 +865,10 @@ button:hover {
   .location-head {
     height: 100px;
   }
+  .our-apt-head h2,
+  .location-head h2 {
+    margin-bottom: 17px;
+  }
   .location {
     margin-bottom: 45px;
   }
@@ -928,10 +880,10 @@ button:hover {
   .location-info-text {
     width: 300px;
   }
-  .footer {
+  footer {
     padding: 0 15px;
   }
-  .footer h3 {
+  footer h3 {
     text-align: center;
   }
   .follow-us {
@@ -946,15 +898,20 @@ button:hover {
   .subscribe-form {
     padding-top: 35px;
   }
-  .subscribe .orange-line,
-  .follow-us .orange-line {
-    right: 45.5%;
-  }
   .social-icons {
     justify-content: center;
     padding-left: 25px;
   }
   .subscribe {
+    width: 100%;
+  }
+  .subscribe,
+  .follow-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subscribe-form {
     width: 100%;
   }
   .subscribe-input[type="text"] {
@@ -964,11 +921,7 @@ button:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    position: relative;
     align-items: center;
-  }
-  .contact-us .orange-line {
-    top: 23%;
   }
   .contact-us p {
     text-align: center;
@@ -983,17 +936,10 @@ button:hover {
     left: 25%;
   }
   .welcome {
-    margin: 0px 0 115px;
+    margin: 0 0 115px;
     font-size: 34px;
   }
-  .search-apt-form div:nth-child(3),
-  .search-apt-form div:nth-child(4) {
+  .form-input-number {
     width: 22.5%;
-  }
-  .represent .orange-line {
-    top: 42%;
-  }
-  .location-head .orange-line {
-    top: 77%;
   }
 }

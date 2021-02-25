@@ -13,20 +13,19 @@
     <!-- MOBILE MENU -->
     <div class="modals-wrapper">
       <div class="modal modal-mobile-menu">
-          <div class="modal-container mobile-menu-container">
-            <nav class="mobile-menu-items">
-              <a href="#" class="mobile-menu-item">Home</a>
-              <a href="#" class="mobile-menu-item">Our Apartment</a>
-              <a href="#" class="mobile-menu-item">Rio</a>
-              <a href="#" class="mobile-menu-item">Contact</a>
-              <a href="#"><button class="book-btn">Book</button></a>
-            </nav>
+        <div class="flex-row-center-center modal-container mobile-menu-container">
+          <nav class="mobile-menu-items flex-column-center">
+            <a href="#" class="mobile-menu-item">Home</a>
+            <a href="#" class="mobile-menu-item">Our Apartment</a>
+            <a href="#" class="mobile-menu-item">Rio</a>
+            <a href="#" class="mobile-menu-item">Contact</a>
+            <a href="#"><button class="book-btn">Book</button></a>
+          </nav>
         </div>
       </div>
     </div>
-    <!-- Front-Page Section -->
     <section class="front-page">
-      <header class="front-page-header">
+      <header class="front-page-header flex-column-center">
         <div>
           <img src="./images/wavy-line.png" alt="wavy-line" /><span
             class="guest"
@@ -56,37 +55,31 @@
       </nav>
     </section>
     <div class="wrapper">
-      <!-- Find Apartments Section -->
       <section class="find-apt">
-        <form class="search-apt-form" action="">
-          <div class="search-apt-form-input">
+        <form class="search-apt-form display-flex" action="">
+          <div class="search-apt-form-input form-input-date">
             <label for="check-in">Check In</label>
             <input id="check-in" type="date" />
           </div>
-          <div class="search-apt-form-input">
+          <div class="search-apt-form-input form-input-date">
             <label for="check-out">Check Out</label>
             <input id="check-out" type="date" />
           </div>
-          <div class="search-apt-form-input">
+          <div class="search-apt-form-input form-input-number">
             <label for="adults">Adults</label>
             <input id="adults" type="number" placeholder="1" />
           </div>
-          <div class="search-apt-form-input">
+          <div class="search-apt-form-input form-input-number">
             <label for="kids">Kids</label>
             <input id="kids" type="number" placeholder="0" />
           </div>
-          <div class="search-apt-form-input">
-            <input
-              class="search-btn"
-              id="search-btn"
-              type="submit"
-              value="Search"
-            />
+          <div class="search-apt-form-input form-button">
+            <button class="search-btn" id="search-btn">Search</button>
           </div>
         </form>
-        <div class="represent">
+        <div class="represent flex-column-center">
           <h2>A Home in the Heart of the City</h2>
-          <span class="orange-line"></span>
+          <hr class="orange-line"></hr>
           <p>
             Stay in a beautiful highrise in Ipanema fust off the beach close to
             many word-class cafes and restaurants. Enjoy Bossa Nova with a cold
@@ -94,12 +87,11 @@
           </p>
         </div>
       </section>
-      <!-- Our Apartments Section -->
-      <section class="our-apt">
+      <section class="our-apt display-flex">
         <div class="our-apt-item">
           <div class="our-apt-head">
             <h2>Our Apartment</h2>
-            <span class="orange-line"></span>
+            <hr class="orange-line"></hr>
           </div>
           <div>
             <img class="apt-img" src="/images/apartment1.jpg" alt="apt-1" />
@@ -109,7 +101,7 @@
           <div>
             <img class="apt-img" src="/images/apartment2.jpg" alt="apt-2" />
           </div>
-          <div class="our-apt-booking">
+          <div class="flex-row-center-center our-apt-booking">
             <div class="our-apt-booking-item" id="our-apt-booking-item">
               <p class="our-apt-info">
                 The apartment is spacious with high ceilings, large windows, an
@@ -122,7 +114,7 @@
           </div>
         </div>
       </section>
-      <section class="location">
+      <section class="location display-flex">
         <div class="location-item">
           <div class="location-img-wrapper">
             <img
@@ -131,13 +123,13 @@
               alt="location-img"
             />
           </div>
-          <div class="location-head">
+          <div class="location-head flex-column-center">
             <h2>Location</h2>
-            <span class="orange-line"></span>
+            <hr class="orange-line"></hr>
           </div>
         </div>
-        <div class="location-item">
-          <div class="location-info">
+        <div class="location-item flex-row-center-center">
+          <div class="location-info flex-column-center">
             <p class="location-info-text">
               Conveniently located just opposite Leblon Beach in Ipanema, our
               apartment will sweep you into the charm and excitements of Rio!
@@ -150,11 +142,10 @@
           </div>
         </div>
       </section>
-      <!-- FOOTER -->
-      <footer class="footer">
+      <footer>
         <div class="contact-us">
           <h3 class="footer-header">Contact Us</h3>
-          <span class="orange-line"></span>
+          <hr class="orange-line"></hr>
           <p>Ask us anything! We're here to answer any questions you have.</p>
           <span class="email-span">Email:</span>
           <a class="email-link" href="mailto:info@mysite.com"
@@ -164,8 +155,8 @@
         </div>
         <div class="follow-us">
           <h3 class="footer-header">Follow Us</h3>
-          <span class="orange-line"></span>
-          <div class="social-icons">
+          <hr class="orange-line"></hr>
+          <div class="social-icons display-flex">
             <a href="#"
               ><img
                 class="icon"
@@ -185,18 +176,14 @@
         </div>
         <div class="subscribe">
           <h3 class="footer-header">Subscribe for Updates & Offers</h3>
-          <span class="orange-line"></span>
+          <hr class="orange-line"></hr>
           <div class="subscribe-form">
             <input
               class="subscribe-input"
               type="text"
               placeholder="Enter your email here*"
             />
-            <input
-              class="btn subscribe-input"
-              type="submit"
-              value="Subscribe Now"
-            />
+            <button class="btn subscribe-btn">Subscribe Now</button>
           </div>
         </div>
       </footer>
