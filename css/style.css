@@ -350,17 +350,6 @@ button:hover {
   border: 1px solid #dcdcdc;
 }
 
-.search-apt-form-input input[type="submit"] {
-  background-color: var(--c-cadetblue);
-  color: var(--txt-c-light);
-}
-
-.search-apt-form-input input[type="submit"]:hover {
-  background-color: var(--c-light);
-  color: var(--txt-c-cadetblue);
-  outline: 1px solid var(--c-cadetblue);
-}
-
 .search-btn {
   padding: 7.1px 10px;
   color: var(--txt-c-light);
@@ -371,11 +360,7 @@ button:hover {
   padding: 0 130px;
 }
 
-.represent h2 {
-  margin-bottom: 35px;
-}
-
-.represent .orange-line {
+.represent h2, .represent .orange-line {
   margin-bottom: 35px;
 }
 
@@ -414,10 +399,7 @@ button:hover {
 }
 
 .our-apt-head {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-bottom: -0.5px;
   color: var(--txt-c-light);
   background-color: var(--c-cadetblue);
@@ -506,7 +488,7 @@ footer {
   padding: 0 15px;
 }
 
-.footer-header {
+.footer-headline {
   margin-bottom: 35px;
 }
 
@@ -576,7 +558,7 @@ footer {
   margin-top: 5px;
 }
 
-.subscribe-input[type="text"] {
+.subscribe-input {
   padding: 7px 0 7px 20px;
   border: 1px solid var(--c-grey-dark);
 }
